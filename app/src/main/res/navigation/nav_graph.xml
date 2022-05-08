@@ -10,4 +10,15 @@
         android:name="nz.co.kiwibank.architecturedemo.ui.meh.view.MehFragment"
         android:label="meh_fragment"
         tools:layout="@layout/meh_fragment" />
+    <fragment
+        android:id="@+id/authenticatedFragment"
+        android:name="nz.co.kiwibank.architecturedemo.ui.authenticated.view.AuthenticatedFragment"
+        android:label="fragment_authenticated"
+        tools:layout="@layout/fragment_authenticated" >
+        <argument
+            android:name="username"
+            app:argType="string"
+            android:defaultValue="@null" />
+    </fragment>
+    <action android:id="@+id/action_global_authenticatedFragment" app:destination="@id/authenticatedFragment" />
 </navigation>
