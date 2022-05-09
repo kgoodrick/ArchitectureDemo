@@ -1,4 +1,4 @@
-package nz.co.kiwibank.corelibrary
+package nz.co.kiwibank.networklibrary
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package nz.co.kiwibank.corelibrary
+package nz.co.kiwibank.networklibrary
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

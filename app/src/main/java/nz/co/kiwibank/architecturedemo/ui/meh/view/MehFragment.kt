@@ -1,19 +1,19 @@
 package nz.co.kiwibank.architecturedemo.ui.meh.view
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.viewModels
 import nz.co.kiwibank.architecturedemo.databinding.MehFragmentBinding
+import nz.co.kiwibank.architecturedemo.ui.base.BaseFragment
 import nz.co.kiwibank.architecturedemo.ui.meh.viewmodel.MehViewModel
 
-class MehFragment : Fragment() {
+class MehFragment : BaseFragment<MehFragmentBinding, MehViewModel>() {
 
-    private val viewModel: MehViewModel by viewModels()
-    private lateinit var binding:MehFragmentBinding
+    override val viewModel: MehViewModel by viewModels()
+    override lateinit var binding: MehFragmentBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
@@ -23,9 +23,23 @@ class MehFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.usernameTextInput.editText?.addTextChangedListener(
+            onTextChanged = { userName, _ ,_, _ ->
+                viewModel.updateUserName(userName.toString())
+            }
+        )
+        binding.PasswordTextInput.editText?.addTextChangedListener(
+            onTextChanged = { password, _, _, _ ->
+                viewModel.updatePassword(password.toString())
+            }
+        )
         binding.button.setOnClickListener {
             viewModel.loginClicked()
         }
+    }
+
+    override fun onReady(savedInstanceState: Bundle?) {
+
     }
 
 }

@@ -4,4 +4,4 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class MehModel(val username: String, val password: String): Parcelable
+data class MehModel(var username: String, var password: String): Parcelable

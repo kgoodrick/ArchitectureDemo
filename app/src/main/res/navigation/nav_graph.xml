@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
+    android:id="@+id/main_nav"
     app:startDestination="@id/mehFragment">
 
     <fragment
@@ -17,8 +17,12 @@
         tools:layout="@layout/fragment_authenticated" >
         <argument
             android:name="username"
-            app:argType="string"
-            android:defaultValue="@null" />
+            app:argType="string" />
+        <argument
+            android:name="password"
+            app:argType="string" />
     </fragment>
-    <action android:id="@+id/action_global_authenticatedFragment" app:destination="@id/authenticatedFragment" />
+    <action
+        android:id="@+id/action_global_authenticatedFragment"
+        app:destination="@id/authenticatedFragment" />
 </navigation>
