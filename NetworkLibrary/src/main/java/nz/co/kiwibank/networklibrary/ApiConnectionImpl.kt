@@ -1,13 +1,15 @@
 package nz.co.kiwibank.networklibrary
 
+import io.reactivex.rxjava3.core.Observable
+import nz.co.kiwibank.networklibrary.response.Responses
 import org.json.JSONObject
 
-class ApiConnectionImpl : ApiConnection {
+object ApiConnectionImpl : ApiConnection {
 
-    override fun login(username: String, password: String): Response {
-        val res = Response()
-
-        return res
+    override fun login(username: String, password: String): Observable<Response> {
+        return Observable.just(username, password).map {
+            Responses.checkUser(username, password)
+        }
     }
 
     override fun logout() {
