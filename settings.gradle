@@ -14,4 +14,7 @@ dependencyResolutionManagement {
 }
 rootProject.name = "ArchitectureDemo"
 include ':app'
-include ':NetworkLibrary'
+include ':modules:NetworkLibrary'
+include ':modules:CoreLibrary'
+
+include ':modules:features:HelloDynamicFeature'

@@ -3,13 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav"
-    app:startDestination="@id/mehFragment">
+    app:startDestination="@id/authenticationFragment">
 
     <fragment
-        android:id="@+id/mehFragment"
-        android:name="nz.co.kiwibank.architecturedemo.ui.meh.view.MehFragment"
+        android:id="@+id/authenticationFragment"
+        android:name="nz.co.kiwibank.architecturedemo.ui.authentication.view.AuthenticationFragment"
         android:label="meh_fragment"
-        tools:layout="@layout/meh_fragment" />
+        tools:layout="@layout/fragment_athentication">
+        <deepLink
+            app:action="ACTION_VIEW"
+            app:uri="kiwibank.co.nz/hello/" />
+    </fragment>
     <fragment
         android:id="@+id/authenticatedFragment"
         android:name="nz.co.kiwibank.architecturedemo.ui.authenticated.view.AuthenticatedFragment"
